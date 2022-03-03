@@ -1,0 +1,52 @@
+# Molecule information
+MOLECULES 2but              # Molecules to load
+PRMTOP ligand.prmtop        # Parameter file
+INPCRD ligand.inpcrd        # Coordinate / Restart file
+RBFILE ligand.rb            # Rigid bodies definition file
+FLEXFILE ligand.td.flex        # Flexible bonds definition file
+OUTPUT_DIR temp
+ROOTS 0
+ROOT_MOBILITY Free
+OUTPUT_DIR temp
+
+
+RUN_TYPE Normal
+ROUNDS 10                   # Usually 2000
+ROUNDS_TILL_REBLOCK 10
+WORLDS R1
+RANDOM_WORLD_ORDER FALSE
+REPRODUCIBLE FALSE
+SEED 42
+
+SAMPLER VV
+NMA_OPTION 0
+SAMPLES_PER_ROUND 1
+
+TIMESTEPS 0.003
+MDSTEPS 10                  # Usually 40
+TEMPERATURE_FIN 300
+TEMPERATURE_INI 300
+THERMOSTAT Andersen
+FFSCALE AMBER
+GBSA 1.0
+
+FIXMAN_POTENTIAL TRUE
+FIXMAN_TORQUE TRUE
+
+BOOST_TEMPERATURE 600
+BOOST_MDSTEPS 1
+
+PRINT_FREQ 1
+WRITEPDBS 0
+VISUAL TRUE
+
+GEOMETRY FALSE
+DISTANCE 0 1
+DIHEDRAL 0 1 2 3
+
+
+THREADS 0
+OPENMM TRUE
+OPENMM_CalcOnlyNonbonded TRUE
+NONBONDED_METHOD    1
+NONBONDED_CUTOFF    2
