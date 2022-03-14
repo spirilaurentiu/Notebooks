@@ -1381,7 +1381,7 @@ class Simulation:
 
 		import subprocess
 		outFN = "out.test"
-		sub = subprocess.Popen(self.ROBOSAMPLEEXEC + " inp.test",
+		sub = subprocess.Popen([self.ROBOSAMPLEEXEC, " inp.test"],
 			stdout = subprocess.PIPE,
 			stderr = subprocess.PIPE)
 		stdout, stderr = sub.communicate()
