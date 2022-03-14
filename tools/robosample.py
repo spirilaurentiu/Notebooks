@@ -1377,15 +1377,15 @@ class Simulation:
 
 		os.system("echo \'" + inpTxt + "\'")
 
-		#os.system(self.ROBOSAMPLEEXEC + " inp.test")
+		os.system(self.ROBOSAMPLEEXEC + " inp.test")
 
-		import subprocess
-		outFN = "out.test"
-		sub = subprocess.Popen([self.ROBOSAMPLEEXEC, " inp.test"])
-			#stdout = subprocess.PIPE,
-			#stderr = subprocess.PIPE)
-		#stdout, stderr = sub.communicate()
-		sub.communicate()
+		#import subprocess
+		#outFN = "out.test"
+		#sub = subprocess.Popen([self.ROBOSAMPLEEXEC, " inp.test"])
+		#	#stdout = subprocess.PIPE,
+		#	#stderr = subprocess.PIPE)
+		##stdout, stderr = sub.communicate()
+		#sub.communicate()
 
 		print("Done Simulation step")
 	#	
