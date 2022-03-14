@@ -1376,7 +1376,15 @@ class Simulation:
 		inpF.close()
 
 		os.system("echo \'" + inpTxt + "\'")
-		os.system(self.ROBOSAMPLEEXEC + " inp.test")
+
+		#os.system(self.ROBOSAMPLEEXEC + " inp.test")
+
+		import subprocess
+		outFN = "out.test"
+		sub = subprocess.Popen(self.ROBOSAMPLEEXEC + " inp.test",
+			stdout = outFN,
+			stderr = outFN)
+		sub.communicate()
 
 		print("Done Simulation step")
 	#	
