@@ -1382,9 +1382,9 @@ class Simulation:
 		import subprocess
 		outFN = "out.test"
 		sub = subprocess.Popen(self.ROBOSAMPLEEXEC + " inp.test",
-			stdout = outFN,
-			stderr = outFN)
-		sub.communicate()
+			stdout = subprocess.PIPE,
+			stderr = subprocess.PIPE)
+		stdout, stderr = sub.communicate()
 
 		print("Done Simulation step")
 	#	
