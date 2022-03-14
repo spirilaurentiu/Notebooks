@@ -992,7 +992,7 @@ class Simulation:
 				'THREADS': [self.nofThreads],
 				'OPENMM': [str(self.openmmTrue).upper()],
 				'OPENMM_CalcOnlyNonbonded': ['TRUE'],
-				'NONBONDED_METHOD' : [1],
+				'NONBONDED_METHOD' : [0],
 				'NONBONDED_CUTOFF' : [1.2]
 			}
 	
@@ -1081,7 +1081,7 @@ class Simulation:
 
 		self.inpDict['WORLDS'].append('R' + str(self.nofWorlds))
 
-		self.inpDict['NONBONDED_METHOD'].append(1)
+		self.inpDict['NONBONDED_METHOD'].append(0)
 		self.inpDict['NONBONDED_CUTOFF'].append(1.2)
 
 	def addWorld(self, regionType='stretch', region=[[1, 2]], rootMobility='Weld', 
